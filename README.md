@@ -4,10 +4,12 @@
 ### Spin up a VM for sample load using Apache Bench
 * Open the [Google Cloud Console] (https://console.cloud.google.com/), navigate to Cloud Launcher, and search for "LAMP Stack".
 * Select the "LAMP Stack" by "Google Click to Deploy"
+
 **Note:** You don't actually need the full LAMP stack for this demo, but since we'll just be using the VM for sending sample load, having Apache pre-installed is an easy way to set this up without additional time or cost. 
 * Once the LAMP Stack VM is up and running, SSH into it
 * Confirm Apache Bench is installed:
-    ab -V
+    
+    `ab -V`
 
 ## Deploy the App Engine App
     gcloud app deploy
