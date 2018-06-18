@@ -1,6 +1,8 @@
 # Google Cloud
 app.yaml
 
+.DS_STORE
+
 # Logs
 logs
 *.log
