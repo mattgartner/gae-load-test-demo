@@ -27,8 +27,7 @@ This demo uses the App Engine Standard Environment with Node.js to showcase the 
 ## Auto-scaling tests
 1. **Cold Boot:** Send 2 requests while all instances are off.
 
-    
-    ab -n 2 -c 1 https://[PROJECT-ID].appspot.com/
+    `ab -n 2 -c 1 https://[PROJECT-ID].appspot.com/`
 
 In Logs Viewer, set an advanced filter (click the dropdown arrow in the "Filter by label or text search" field to enable advanced): 
 
@@ -37,9 +36,8 @@ In Logs Viewer, set an advanced filter (click the dropdown arrow in the "Filter 
 Notice that the first request has a severity level of `INFO` and has a higher latency than the second request. At the first request, App Engine spins up an instance and starts up your Node.js app. Your second request should be considerably faster, and not have a severity level associated with it.
 
 2. **One instance handling all requests:**
-
     
-    ab -n 1000 -c 4 https://[PROJECT-ID].appspot.com/
+    `ab -n 1000 -c 4 https://[PROJECT-ID].appspot.com/`
 
 In Logs Viewer, set an advanced filter: 
 
@@ -51,8 +49,7 @@ In the Cloud Console, under App Engine > Instances, you should see that the orig
 
 3. **Hitting Max Instances:** Refer to the `app.yaml` file. We've set `max_instances` to 10 to help control costs. App Engine will spin up instances in response to load, up to 10 instances in this case to help keep costs under control. In the load test below, we have too many concurrent requests being run to be handled by just the 10 instances. Without `max_instances` set, App Engine would likely spin up more instances to respond to requests with low latency. Since we've capped our instances, we'll start to see high latencies while App Engine queues the requests. In some cases, the requests may time out and not finish. 
 
-    
-    ab -n 16000 -c 400 https://[PROJECT-ID].appspot.com/
+    `ab -n 16000 -c 400 https://[PROJECT-ID].appspot.com/`
 
 In Logs Viewer, set an advanced filter: 
 
