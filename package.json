@@ -6,7 +6,7 @@
   "author": "Matt Gartner",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mattgartner/gae-load-testing-using-kubernetes.git"
+    "url": "https://github.com/mattgartner/gae-load-test-demo.git"
   },
   "engines": {
     "node": "8.x.x"
