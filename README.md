@@ -27,6 +27,7 @@ This demo uses the App Engine Standard Environment with Node.js to showcase the 
 ## Auto-scaling tests
 1. **Cold Boot:** Send 2 requests while all instances are off.
 
+    
     ab -n 2 -c 1 https://[PROJECT-ID].appspot.com/
 
 In Logs Viewer, set an advanced filter (click the dropdown arrow in the "Filter by label or text search" field to enable advanced): 
@@ -37,6 +38,7 @@ Notice that the first request has a severity level of `INFO` and has a higher la
 
 2. **One instance handling all requests:**
 
+    
     ab -n 1000 -c 4 https://[PROJECT-ID].appspot.com/
 
 In Logs Viewer, set an advanced filter: 
@@ -49,6 +51,7 @@ In the Cloud Console, under App Engine > Instances, you should see that the orig
 
 3. **Hitting Max Instances:** Refer to the `app.yaml` file. We've set `max_instances` to 10 to help control costs. App Engine will spin up instances in response to load, up to 10 instances in this case to help keep costs under control. In the load test below, we have too many concurrent requests being run to be handled by just the 10 instances. Without `max_instances` set, App Engine would likely spin up more instances to respond to requests with low latency. Since we've capped our instances, we'll start to see high latencies while App Engine queues the requests. In some cases, the requests may time out and not finish. 
 
+    
     ab -n 16000 -c 400 https://[PROJECT-ID].appspot.com/
 
 In Logs Viewer, set an advanced filter: 
@@ -59,5 +62,9 @@ In Logs Viewer, set an advanced filter:
 
 This log filter will show us all the requests that took more than 1 second to respond, indicating that the instances were backlogged with requests and couldn't serve them right away. 
 
+## Optional
+Approximately 15 minutes after the last request is sent, you should see the total instances being billed for drop to 0. 
+
+For more information on how auto-scaled instances are managed and billed with Node.js in the App Engine Standard Environment: [https://cloud.google.com/appengine/docs/standard/nodejs/how-instances-are-managed]
 
 
