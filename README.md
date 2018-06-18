@@ -1,8 +1,13 @@
 # Google App Engine Scaling Demo Using Apache Bench
+This demo uses the App Engine Standard Environment with Node.js to showcase the auto-scaling capabilities of App Engine. By sending sample load via an external VM (hosted on GCE), we will watch App Engine instances scale up and down in response to traffic.
 
 ## Setup
+### Prerequisites
+* Google Cloud Platform account
+* Install and setup [Google Cloud SDK](https://cloud.google.com/sdk/)
+
 ### Spin up a VM for sample load using Apache Bench
-* Open the [Google Cloud Console] (https://console.cloud.google.com/), navigate to Cloud Launcher, and search for "LAMP Stack".
+* Open the [Google Cloud Console](https://console.cloud.google.com/), navigate to Cloud Launcher, and search for "LAMP Stack".
 * Select the "LAMP Stack" by "Google Click to Deploy"
 
 **Note:** You don't actually need the full LAMP stack for this demo, but since we'll just be using the VM for sending sample load, having Apache pre-installed is an easy way to set this up without additional time or cost. 
