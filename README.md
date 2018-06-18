@@ -1,4 +1,5 @@
 # Google App Engine Scaling Demo Using Apache Bench
+**Note:** This is an unofficial project for experimental purposes only
 This demo uses the App Engine Standard Environment with Node.js to showcase the auto-scaling capabilities of App Engine. By sending sample load via an external VM (hosted on GCE), we will watch App Engine instances scale up and down in response to traffic.
 
 ## Setup
