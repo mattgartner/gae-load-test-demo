@@ -1,8 +1,7 @@
 runtime: nodejs8
 
-env_variables:
-  TEST_URL: 'https://[PROJECT_ID].appspot.com/'
-
 automatic_scaling:
-  target_cpu_utilization: .5
+  max_concurrent_requests: 8
+  max_instances: 10
   min_idle_instances: 0
+  min_instances: 0
