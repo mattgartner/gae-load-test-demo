@@ -1,5 +1,11 @@
 runtime: nodejs8
 
+env_variables: 
+  CONSUMER_KEY: [TWITTER_CONSUMER_KEY]
+  CONSUMER_SECRET: [TWITTER_CONSUMER_SECRET]
+  ACCESS_TOKEN_KEY: [TWITTER_ACCESS_TOKEN]
+  ACCESS_TOKEN_SECRET: [TWITTER_ACCESS_SECRET]
+
 automatic_scaling:
   max_concurrent_requests: 8
   max_instances: 10
