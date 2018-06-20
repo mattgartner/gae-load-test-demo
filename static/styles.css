@@ -22,7 +22,13 @@ body {
 a img{
   border: 0px;
 }
+a {
+  color: #467bfa;
+}
 
+.mdl-color--accent { 
+  background-color: #EA4335 !important;
+}
 ::-moz-selection {
   background-color: #6ab344;
   color: #fff;
@@ -79,6 +85,11 @@ a img{
   .android-header .mdl-layout__drawer-button {
     background: transparent;
     color: #767777;
+  }
+  .mdl-typography--font-thin {
+    text-align: center;
+    font-weight: 600!important;
+    color: #333;
   }
 
   .android-header .mdl-navigation__link {
@@ -175,7 +186,6 @@ a img{
   height: 800px;
   width: auto;
   background-color: #f3f3f3;
-  background: url('images/slide01.jpg') center 30% no-repeat;
   background-size: cover;
 }
 
@@ -302,9 +312,7 @@ a img{
 
 .android-wear-section {
   position: relative;
-  background: url('images/wear.png') center top no-repeat;
-  background-size: cover;
-  height: 800px;
+  height: 100px;
 }
 
 .android-wear-band {
@@ -329,11 +337,11 @@ a img{
 
 .android-link {
   text-decoration: none;
-  color: #8bc34a !important;
+  color: #34A853 !important;
 }
 
   .android-link:hover {
-    color: #7cb342 !important;
+    color: #34A853 !important;
   }
 
   .android-link .material-icons {
@@ -392,7 +400,9 @@ a img{
 
 .android-card-container {
 }
-
+  .mdl-cell--3-col {
+    width: 100%;
+  }
   .android-card-container .mdl-card__media {
     overflow: hidden;
     background: transparent;
@@ -468,6 +478,9 @@ a img{
 @media (max-width: 900px) {
   .android-navigation-container {
     display: none;
+  }
+  .mdl-typography--font-thin {
+    font-size: 28px;
   }
 
   .android-title {
