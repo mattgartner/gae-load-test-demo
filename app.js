@@ -3,13 +3,14 @@ dotenv.load();
 const express = require('express');
 const app = express();
 const Twitter = require('twitter');
+app.locals.moment = require('moment');
 
 app.set("views", __dirname + "/views");
 app.set("view engine", "pug");
 
 app.use(express.static("static"));
 
-app.get('/', (req, res) => {
+app.get('/load', (req, res) => {
   res.status(200).send('Hello world!').end();
 });
 
@@ -17,7 +18,7 @@ app.get('/test', (req, res) => {
   res.status(200).send('Hello world!').end();
 });
 
-app.get('/twitter', (req, res) => {
+app.get('/', (req, res) => {
   var client = new Twitter({
     consumer_key: process.env.CONSUMER_KEY,
     consumer_secret: process.env.CONSUMER_SECRET,
@@ -34,6 +35,7 @@ app.get('/twitter', (req, res) => {
   
     const request = client.get('search/tweets', params, function(err, data, response) {
         const tweets = data.statuses;
+        // console.log(tweets[0]);
       if (!err) {
         res.render("twitter", {tweets: tweets});
       } else {
